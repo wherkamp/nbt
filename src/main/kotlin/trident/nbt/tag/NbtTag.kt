@@ -19,5 +19,5 @@ interface NbtTag<T : Any> {
     fun copy(name: String = this.name, value: T = this.value): NbtTag<T>
 }
 
-val NbtTag<*>.prefix
+val Nbt.prefix
     get() = "${if (name.isEmpty()) "" else "$name: "}${companion.type} = "

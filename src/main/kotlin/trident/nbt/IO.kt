@@ -26,7 +26,9 @@ enum class Compression(
     }
 
     companion object {
-        operator fun get(id: Int) = values().getOrNull(id) ?: throw IllegalArgumentException("Invalid compression method ID: $id.")
+        private val values = values()
+
+        operator fun get(id: Int) = values.getOrNull(id) ?: throw IllegalArgumentException("Invalid compression method ID: $id.")
     }
 }
 
